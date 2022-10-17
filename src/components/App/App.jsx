@@ -1,8 +1,9 @@
 import React from 'react';
-import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
-import Notification from './Notification/Notification';
-import Section from './Section/Section';
-import Statistics from './Statistics/Statistics';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Notification from '../Notification/Notification';
+import Section from '../Section/Section';
+import Statistics from '../Statistics/Statistics';
+import Wrapper from './App.styled';
 
 class App extends React.Component {
   state = {
@@ -13,21 +14,21 @@ class App extends React.Component {
 
   onFeedbackIncrement = evt => {
     switch (evt.target.innerText) {
-      case 'good':
+      case 'Good':
         this.setState(prevState => {
           return {
             good: prevState.good + 1,
           };
         });
         break;
-      case 'neutral':
+      case 'Neutral':
         this.setState(prevState => {
           return {
             neutral: prevState.neutral + 1,
           };
         });
         break;
-      case 'bad':
+      case 'Bad':
         this.setState(prevState => {
           return {
             bad: prevState.bad + 1,
@@ -47,7 +48,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <Wrapper>
         <Section title="Please leave a feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -71,7 +72,7 @@ class App extends React.Component {
             />
           )}
         </Section>
-      </div>
+      </Wrapper>
     );
   }
 }
