@@ -1,32 +1,27 @@
 import PropTypes from 'prop-types';
-import {
-  GoodStat,
-  BadStat,
-  NeutralStat,
-  TotalStat,
-  PercentageStat,
-  StatWrapper,
-} from './Statistics.styled';
+import { StatText, StatList, StatItem } from './Statistics.styled';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <StatWrapper>
-      <GoodStat>
-        Good: <span>{good} </span>
-      </GoodStat>
-      <NeutralStat>
-        Neutral: <span>{neutral} </span>
-      </NeutralStat>
-      <BadStat>
-        Bad: <span>{bad} </span>
-      </BadStat>
-      <TotalStat>
-        Total: <span>{total}</span>
-      </TotalStat>
-      <PercentageStat>
-        Positive feedback: <span>{positivePercentage}%</span>
-      </PercentageStat>
-    </StatWrapper>
+    <StatList>
+      <StatItem>
+        <StatText type={'good'}>Good: {good}</StatText>
+      </StatItem>
+      <StatItem>
+        <StatText type={'neutral'}>Neutral: {neutral}</StatText>
+      </StatItem>
+      <StatItem>
+        <StatText type={'bad'}>Bad: {bad}</StatText>
+      </StatItem>
+      <StatItem>
+        <StatText type={'total'}>Total: {total}</StatText>
+      </StatItem>
+      <StatItem>
+        <StatText type={'positivePercentage'}>
+          Positive feedback: {positivePercentage}%
+        </StatText>
+      </StatItem>
+    </StatList>
   );
 };
 export default Statistics;

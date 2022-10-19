@@ -19,15 +19,19 @@ const Button = styled.button`
     color: lightseagreen;
     box-shadow: 0px 0px 17px 6px lightseagreen;
   }
+`;
 
+const ButtonsItem = styled.li`
   &:not(:last-child) {
     margin-bottom: 20px;
   }
 `;
-const ButtonsWrapper = styled.div`
+const ButtonsList = styled.ul`
+  list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
 `;
-export { Button, ButtonsWrapper };
+export { Button, ButtonsList, ButtonsItem };
